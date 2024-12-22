@@ -1,0 +1,293 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #d9534f;
+}
+
+/* Header styling */
+header {
+  color: #ffefd9;
+  width: 100%;
+  text-align: center; /* Center the text */
+  padding: 2px 0;
+  z-index: 1;
+  transition: background-color 0.5s ease; /* Smooth transition for background color */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Vertically center items */
+  position: relative; /* Needed for logo positioning */
+}
+
+/* Logo styling */
+.logo {
+  width: 75px; /* Default width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px; /* Add spacing between the text and the logo */
+}
+
+/* Media query for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+  .logo {
+    width: 50px; /* Reduce the logo size on smaller screens */
+    margin-left: 5px; /* Reduce the spacing between the text and the logo */
+  }
+}
+
+/* Background color for each active tab */
+header.focus-active {
+  background-color: #d9534f; /* Focus tab color */
+}
+
+header.short-break-active {
+  background-color: #2284bd; /* Short break tab color */
+}
+
+header.long-break-active {
+  background-color: #5e686e; /* Long break tab color */
+}
+
+/* First section with timer */
+.timer-section {
+  height: 100vh; /* Make this section take up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9534f; /* Default background color */
+  transition: background-color 0.5s ease; /* Smooth transition for background color */
+}
+
+/* Background color for each active tab */
+.timer-section.focus-active {
+  background-color: #d9534f; /* Focus tab color */
+}
+
+.timer-section.short-break-active {
+  background-color: #2284bd; /* Short break tab color */
+}
+
+.timer-section.long-break-active {
+  background-color: #5e686e; /* Long break tab color */
+}
+
+/* Container for the timer */
+.container {
+  background-color: #ffefd9;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  padding: 3%;
+  text-align: center;
+  position: relative;
+  margin-top: -200px; /* Add margin to account for fixed header */
+}
+
+/* Timer display */
+#timer {
+  font-size: 4rem;
+  margin: 20px 0;
+}
+
+/* Buttons for start/stop and reset */
+.buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Start/Stop button styling */
+#startStop {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Reset button styling */
+#reset {
+  background-color: #5bc0de;
+  color: white;
+}
+
+/* Button hover effect */
+.buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Tabs for focus, short break, and long break */
+.tabs button {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Active tab styling */
+.tabs button.active {
+  font-weight: bold;
+}
+
+/* Active focus tab styling */
+.tabs #focusTab.active {
+  border-bottom: 2px solid #d9534f;
+}
+
+/* Active short break tab styling */
+.tabs #shortBreakTab.active {
+  border-bottom: 2px solid #2284bd;
+}
+
+/* Active long break tab styling */
+.tabs #longBreakTab.active {
+  border-bottom: 2px solid #5e686e;
+}
+
+/* Focus session counter */
+#focusCounter {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Settings button */
+.settings {
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5bc0de;
+}
+/* Overlay for modal */
+.overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 5; /* Ensure it appears behind the modal */
+}
+/* Settings Modal */
+.modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff3e2;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: left;
+  z-index: 10;
+  width: 300px;
+}
+
+/* Modal title */
+.modal h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Setting item in modal */
+.modal .setting-item {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Input fields in modal */
+.modal input {
+  width: 80px;
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Modal button styling */
+.modal-buttons button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Save button styling */
+.modal-buttons button.save {
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Cancel button styling */
+.modal-buttons button.cancel {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Modal button hover effect */
+.modal-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* New: Styling for the Reset Counter Button */
+#resetCounter {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d9534f;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#resetCounter:hover {
+  opacity: 0.8;
+}
+
+/* Overlay for modal */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+/* New section styling */
+.new-section {
+  background-color: #ffefd9;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  color: #343a40;
+}
+
+.new-section h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.new-section p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
